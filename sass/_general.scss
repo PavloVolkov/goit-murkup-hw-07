@@ -1,0 +1,67 @@
+body {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  color: $text-color;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  font-style: normal;
+}
+a {
+  color: inherit;
+}
+.container {
+  display: flex;
+  width: 1200px;
+  padding: 0 15px 0 15px;
+}
+.section-title {
+  font-size: 36px;
+  line-height: 42px;
+  color: $black;
+  margin-top: 95px;
+}
+%centr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin outline-visual($outline-color: red) {
+  outline: 1px solid $outline-color;
+}
+.social {
+  display: flex;
+  flex-direction: row;
+  &-item:nth-child(4) {
+    margin: 0;
+  }
+  &-item {
+    margin-right: 10px;
+  }
+  &-circle {
+    @extend %centr;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background-color: $text-color;
+    transition: $tr250;
+  }
+  &-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &-circle:hover,
+  &-circle:focus {
+    transition: $tr250;
+  }
+}

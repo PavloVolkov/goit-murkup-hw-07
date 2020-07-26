@@ -1,0 +1,159 @@
+/*header styles*/
+header {
+  @extend %centr;
+  width: 100%;
+  height: 80px;
+  // position: sticky;
+  // top: 0;
+  // z-index: 1000;
+}
+/*logo style*/
+.logo {
+  @extend %centr;
+  // @include outline-visual(blue);
+  font-family: "Raleway", sans-serif;
+  font-size: 26px;
+  line-height: 100%;
+
+  &-blue {
+    color: $accent-color;
+  }
+  &-black {
+    color: $black;
+  }
+  &-white {
+    color: $white;
+  }
+}
+
+/*navigation menu styles*/
+.navigation {
+  display: flex;
+}
+.navigation-list {
+  @extend %centr;
+
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+
+    margin: 0 0 0 50px;
+    padding: 0;
+
+    line-height: 80px;
+  }
+  &:first-child {
+    margin-left: 35px;
+  }
+  &-link {
+    display: flex;
+    position: relative;
+    color: $black;
+    transition: $tr250;
+  }
+  &-link:focus,
+  &-link:hover {
+    color: $accent-color;
+    transition: $tr250;
+  }
+  &-link::after {
+    content: "";
+    position: absolute;
+
+    opacity: 0;
+
+    left: 0;
+    bottom: 0;
+
+    height: 4px;
+    width: 100%;
+
+    transition: $tr250;
+    border-radius: 4px;
+    background-color: $accent-color;
+  }
+  &-link:focus::after,
+  &-link:hover::after {
+    content: "";
+    position: absolute;
+
+    opacity: 1;
+
+    left: 0;
+    bottom: 0;
+
+    height: 4px;
+    width: 100%;
+
+    transition: $tr250;
+    border-radius: 4px;
+    background-color: $accent-color;
+  }
+}
+
+/*contacts list styles*/
+.address-top {
+  display: flex;
+  margin: 0 0 0 auto;
+  font-style: inherit;
+}
+.contacts {
+  @extend %centr;
+  li {
+    display: flex;
+
+    line-height: 80px;
+  }
+
+  a {
+    @extend %centr;
+  }
+
+  &-envelope-icon {
+    width: 16px;
+    height: 16px;
+
+    margin-right: 10px;
+
+    fill: $text-color;
+    transition: $tr250;
+  }
+  &-phone-icon {
+    width: 11px;
+    height: 16px;
+
+    margin-right: 10px;
+
+    fill: $text-color;
+    transition: $tr250;
+  }
+  &-link:hover &-phone-icon,
+  &-link:focus &-phone-icon {
+    fill: $accent-color;
+    transition: $tr250;
+  }
+  &-link:hover &-envelope-icon,
+  &-link:focus &-envelope-icon {
+    fill: $accent-color;
+    transition: $tr250;
+  }
+  &-link:hover &-mail,
+  &-link:focus &-mail {
+    color: $accent-color;
+    transition: $tr250;
+  }
+  &-link:hover &-phone,
+  &-link:focus &-phone {
+    color: $accent-color;
+    transition: $tr250;
+  }
+  &-mail,
+  &-phone {
+    transition: $tr250;
+  }
+}
+.phone {
+  margin-left: 30px;
+}
